@@ -5,10 +5,6 @@
 
 {% block main_content %}
 
-<div style="display: flex; gap: 10px; margin-top: 120px;">
-    <a href = "{{ url_for('welcome') }}" class = "btn" >Home</a>
-    <a href = "{{ url_for('main') }}" class = "btn" >Main</a>
-</div>
 <h1 class="page_title">Two Sum</h1>
 
 <span class="page_text">
@@ -17,11 +13,7 @@
         <p>
             <pre><code>
                 {% raw %}
-                def twoSum(nums, target):
-                    for i in range(len(nums)):
-                        for j in range(len(nums)):
-                            if nums[i] + nums[j] == target:
-                                return [i, j]
+                {{incorrect_code}}
                 {% endraw %}
             </code></pre>
         </p>
