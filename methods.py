@@ -95,7 +95,8 @@ def (nums: List[int], target: int) -> List[int]:
             "Palindrome": {"problem_name": "Palindrome", 
                            "function_header": "def isPalindrome(s: str) -> bool", \
                            "incorrect_code": 
-"""def isPalindrome(s: str) -> bool:
+"""
+def isPalindrome(s: str) -> bool:
     s = s.lower()
     filtered = ''.join(c for c in s if c.isalpha())
     return filtered == filtered[::-1]""",
@@ -128,7 +129,8 @@ def (nums: List[int], target: int) -> List[int]:
                             "function_header": "def removeNthFromEnd(head: Optional[ListNode], n: int) -> Optional[ListNode]:", 
                             "incorrect_code":
                             
-"""def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
+"""
+def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
     length = 0
     current = head
     while current:
