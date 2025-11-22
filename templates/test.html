@@ -5,16 +5,14 @@
 
 {% block main_content %}
 
-<p style="margin-top: 130px;"><h1 class="page_title">Two Sum</h1></p>
+<h1 class="page_title">{{ problem_name }}</h1>
 
 <span class="page_text">
     <label> 
         Incorrect Solution:
         <p>
             <pre><code>
-                {% raw %}
-                {{incorrect_code}}
-                {% endraw %}
+                {{ incorrect_code }}
             </code></pre>
         </p>
     </label>
