@@ -9,7 +9,7 @@
     <a href = "{{ url_for('welcome') }}" class = "btn" >Home</a>
     <a href = "{{ url_for('main') }}" class = "btn" >Main</a>
 </div>
-<h1 class="page_title">Two Sum</h1>
+<h1 class="page_title">{{problem_name}}</h1>
 
 <span class="page_text">
     <label> 
@@ -17,18 +17,14 @@
         <p>
             <pre><code>
                 {% raw %}
-                def twoSum(nums, target):
-                    for i in range(len(nums)):
-                        for j in range(len(nums)):
-                            if nums[i] + nums[j] == target:
-                                return [i, j]
+                {{incorrect_code}}
                 {% endraw %}
             </code></pre>
         </p>
     </label>
     <form method="post" action="/test/">
-        <textarea id="code" name="code" rows="5" cols="50">def test(): 
-        return 67</textarea>
+        <textarea id="code" name="code" rows="5" cols="50">{{function_header}} 
+    pass</textarea>
         </label>
         <p></p>
         <input type="submit" value="submit">
