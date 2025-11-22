@@ -1,3 +1,19 @@
 body {
     background-color: #4DB1E0;
 }
+
+.trash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.trash {
+  position: absolute;
+  width: 50px;
+}
+
