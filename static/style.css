@@ -34,7 +34,38 @@ body {
   left: 0;           /* start from left edge */
   width: 100%;       /* cover full width */
   height: auto;      /* maintain aspect ratio */
-  z-index: 1000;     /* above other content */
+  z-index: 2;     /* above other content */
+}
+
+nav ul {
+    position: fixed;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0;
+    z-index: 100;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #C2ECFF;
 }
 
 .main_content {
