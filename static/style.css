@@ -28,6 +28,15 @@ body {
 
 /* Other */
 
+.header-image {
+  position: fixed;   /* sticks to viewport */
+  top: 0;            /* at top */
+  left: 0;           /* start from left edge */
+  width: 100%;       /* cover full width */
+  height: auto;      /* maintain aspect ratio */
+  z-index: 1000;     /* above other content */
+}
+
 .main_content {
   position: relative; /* for z-index */
   z-index: 1;
