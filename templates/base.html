@@ -12,12 +12,12 @@
     {% block head_stuff %}{% endblock %}
 </head>
 
-<nav>
+<!-- <nav>
   <ul>
     <li><a class= "topbuttons" href="{{ url_for('welcome') }}">Welcome</a></li>
     <li><a class= "topbuttons" href="{{ url_for('problems') }}">Problems</a></li>
   </ul>
-</nav>
+</nav> -->
 
 
 <body>
@@ -57,8 +57,13 @@
     <img src="/static/images/trash6.png" class="trash">
   </div>
 
+  <div class="fish-container">
+    <img src="/static/images/clownfish.gif" class="fish">
+</div>
+
   <script src="/static/js/trash.js"></script>
   <script src="/static/js/header.js"></script>
   <script src="/static/js/editor.js"></script>
+  <script src="/static/js/fish.js"></script>
 </body>
 </html>
