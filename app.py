@@ -9,7 +9,7 @@ app.secret_key = "changethis"
 
 @app.route('/')
 def welcome():
-    return render_template('welcome.html', page_title='Welcome Page')
+    return render_template('welcome.html', page_title='CleenCode')
 
 @app.route('/problems/')
 def problems():
