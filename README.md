@@ -9,7 +9,9 @@
 
 ___
 
-<h3>Deployed site: <a href="https://cleencode.fishing/">https://cleencode.fishing/</a></h3>
+<h3><a href="https://cleencode.fishing/" target="_blank">Deployed Site</a></h3>
+<h3><a href="https://devpost.com/software/cleencode?ref_content=user-portfolio&ref_feature=in_progress" target="_blank">Devpost</a></h3>
+<h3><a href="https://docs.google.com/presentation/d/1Pj-qZoz-9NRz9xjVkWMByr6ymnSsAppOhB1rLHORHPM/present?slide=id.p" target="_blank">Slideshow</a></h3>
 
 <h3>test local edits:</h3>
 <ol>
