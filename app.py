@@ -30,26 +30,37 @@ def problem(problem_slug):
     if request.method == 'GET':
         return render_template('problem.html', data=data, tests=tests, page_title=problem_name)
 
-    # POST request
+        # POST request
     else:
         code = request.form.get('code')
+        data = m.problems[problem_name]
+        tests = data["tests"]
 
         try:
             # Compile user code and extract the function
             func = m.load_user_function(code)
 
             if func is None:
-                return "No function found in submitted code.", 400
+                # Return all tests as failed
+                test_results = []
+                for test in tests:
+                    test_results.append({
+                        "input": test["input"],
+                        "expected": test["output"],
+                        "actual": "Error: No function found",
+                        "passed": False
+                    })
+                return jsonify({"tests": test_results, "all_passed": False})
 
             test_results = []
-            for test in data["tests"]:
+            for test in tests:
                 passed, result = m.run_test(func, test)
                 test_results.append({
                     "input": test["input"],
                     "expected": test["output"],
                     "actual": result,
                     "passed": passed
-            })
+                })
                 
             num_passed = sum(1 for r in test_results if r["passed"])
             if num_passed == len(test_results):
@@ -57,14 +68,19 @@ def problem(problem_slug):
                 complete[problem_name] = True
                 session['complete'] = complete
 
-            print(session['complete'])
-
-            data['incorrect_code'] = code
-            # print(test_results)
-            return render_template('problem.html', data=data, tests=test_results, page_title=problem_name)
+            return jsonify({"tests": test_results, "all_passed": num_passed == len(test_results)})
 
         except Exception as e:
-            return f"Error: {str(e)}", 500, {'Content-Type': 'text/plain'}
+            # Instead of returning error, return all tests as failed
+            test_results = []
+            for test in tests:
+                test_results.append({
+                    "input": test["input"],
+                    "expected": test["output"],
+                    "actual": f"Error: {str(e)}",
+                    "passed": False
+                })
+            return jsonify({"tests": test_results, "all_passed": False})
 
 
 @app.before_request
