@@ -285,7 +285,7 @@ nav a:focus {
 /* problem description & incorrect solution */
 
 .problem_container {
-  width: 75%;               /* Take up 75% of screen */
+  width: 100%;               /* Take up 75% of screen */
   margin: 0 auto;           /* Center it horizontally */
   display: flex;            /* Enable side-by-side layout */
   gap: 10px;                /* Optional spacing between columns */
@@ -294,7 +294,6 @@ nav a:focus {
 
 .problem_container > div {
   flex: 1;                  /* Each child div takes up equal width */
-  width:30%;
   background: #f2f2f2;      /* Optional styling */
   padding: 20px;
   box-sizing: border-box;
