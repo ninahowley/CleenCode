@@ -4,7 +4,6 @@ import io
 import contextlib
 import methods as m
 
-flask run --host=0.0.0.0
 app = Flask(__name__)
 app.secret_key = "changethis"
 
@@ -95,4 +94,4 @@ def problem(problem_name):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='0.0.0.0', port=10000)
