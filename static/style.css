@@ -13,21 +13,26 @@ body {
 }
 
 /* Trash style */
-
-.trash-container {
+fish-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
-  z-index: -1; /* stay behind main content */
+  z-index: 1; /* fish is above background */
   overflow: hidden;
 }
 
 .trash {
   position: absolute;
   width: 75px;
+}
+
+.fish {
+  position: absolute;
+  width: 150px;
+  height: auto;       /* let browser keep aspect ratio */
+  top: 40vh;
+  left: 0;
+  transition: transform 0.2s;
 }
 
 /* Header container */
