@@ -1,36 +1,46 @@
 const trashItems = document.querySelectorAll('.trash');
 
 trashItems.forEach(item => {
-// Random starting position
-let x = Math.random() * (window.innerWidth - 50);
-let y = Math.random() * (window.innerHeight - 50);
+    // Get full page height dynamically
+    const pageHeight = document.documentElement.scrollHeight;
 
-// Random velocity
-let vx = (Math.random() * 4) - 2; // horizontal speed
-let vy = (Math.random() * 4) - 2; // vertical speed
+    // Random starting position
+    let x = Math.random() * (window.innerWidth - 50);
+    let y = Math.random() * (pageHeight - 50);
 
-// Random rotation speed (degrees per frame)
-let rotation = Math.random() * 360; // starting rotation
-let rotationSpeed = (Math.random() * 4) - 2; // can rotate clockwise or counterclockwise
+    // Random velocity
+    let vx = (Math.random() * 4) - 2; // horizontal speed
+    let vy = (Math.random() * 4) - 2; // vertical speed
 
-function animate() {
-x += vx;
-y += vy;
+    // Random rotation speed (degrees per frame)
+    let rotation = Math.random() * 360; // starting rotation
+    let rotationSpeed = (Math.random() * 4) - 2; // clockwise or counterclockwise
 
-// bounce off edges
-if (x <= 0 || x >= window.innerWidth - 50) vx *= -1;
-if (y <= 0 || y >= window.innerHeight - 50) vy *= -1;
+    // Vertical limits
+    const minY = 150;                   // don’t go above 100px from top
+    const maxY = pageHeight - 50;       // bottom of scrollable page
 
-// update rotation
-rotation += rotationSpeed;
+    function animate() {
+        x += vx;
+        y += vy;
 
-// apply transform
-item.style.left = x + 'px';
-item.style.top = y + 'px';
-item.style.transform = `rotate(${rotation}deg)`;
+        // bounce off edges
+        if (x <= 0 || x >= window.innerWidth - 50) vx *= -1;
+        if (y <= minY || y >= maxY) vy *= -1;
 
-requestAnimationFrame(animate);
-}
+        // clamp vertical position strictly
+        y = Math.max(minY, Math.min(maxY, y));
 
-animate();
+        // update rotation
+        rotation += rotationSpeed;
+
+        // apply transform
+        item.style.left = x + 'px';
+        item.style.top = y + 'px';
+        item.style.transform = `rotate(${rotation}deg)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 });

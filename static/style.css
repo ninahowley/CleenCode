@@ -13,11 +13,15 @@ body {
 }
 
 /* Trash style */
-fish-container {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1; /* fish is above background */
+.trash-container,
+.fish-container {
+  position: fixed;      /* always relative to viewport, not document flow */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* click-through */
+  z-index: -1;          /* behind content */
   overflow: hidden;
 }
 
@@ -28,7 +32,7 @@ fish-container {
 
 .fish {
   position: absolute;
-  width: 150px;
+  width: 200px;
   height: auto;       /* let browser keep aspect ratio */
   top: 40vh;
   left: 0;
