@@ -23,18 +23,6 @@ def problem(problem_name):
         # if GET, send blank form
         return render_template('problem.html', data=data)
     else:
-        print('put')
-        # need to implement as with test
-        return render_template('problem.html', data=data)
-
-@app.route('/test/', methods=['GET', 'POST'])
-def test():
-    print(request.method)
-    if request.method == 'GET':
-        # if GET, send blank form
-        return render_template('test.html', page_title='Test')
-
-    else:
         code = request.form.get('code')
         print('code:', code)
         try:
@@ -58,6 +46,8 @@ def test():
         except Exception as e:
             # Return error message as plain text
             return f"Error: {str(e)}", 500, {'Content-Type': 'text/plain'}
+
+
 
 if __name__ == '__main__':
     app.debug = True

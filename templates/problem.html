@@ -17,20 +17,23 @@
   </div>
   <div>
     <h2>Incorrect Solution</h2>
-    <pre>
+    <pre class="code">
         {{ data['incorrect_code'] }}
     </pre>
   </div>
 </div>
 
-<span class="page_text">
-    <label> 
-        <p>
-            <textarea class="problem_container">
-{{ data['incorrect_code'][1:] }}
-            </textarea>
-        </p>
-    </label>
-</span>
+<div class="problem_container">
+  <div>
+    <form method=POST action="">
+      <label for="code">Your Code Here:</label> 
+      <p>
+        <textarea id="code" name="code">{{ data['incorrect_code'][1:] }}</textarea>
+      </p>
+      <input class="btn" type="submit" name="submit" value="Submit">
+  </form>
+  </div>
+  
+</div>
 
 {% endblock %}
