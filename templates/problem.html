@@ -64,9 +64,9 @@
               <p style="color:white; font-family: Consolata, sans-serif;"><strong>expected =</strong> {{ test['expected'] }}</p>
               <p style="color:white; font-family: Consolata, sans-serif;"><strong>result =</strong> {{ test['actual'] }}</p>
               {% if test['passed'] %}
-                <h4 style="color: green; margin: 5px 0;">PASSED</h4>
+                <p class="btn-container btn-resultp">PASSED</p>
               {% else %}
-                <h4 style="color: red; margin: 5px 0;">FAILED</h4>
+                <p class="btn-container btn-resultf">FAILED</p>
               {% endif %}
             </li>
           {% endif %}
