@@ -9,7 +9,6 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-
     font-family: K2D, sans-serif;
 }
 
@@ -285,19 +284,32 @@ nav a:focus {
 /* problem description & incorrect solution */
 
 .problem_container {
-  width: 75%;               /* Take up 75% of screen */
+  width: 100%;               /* Take up 75% of screen */
   margin: 0 auto;           /* Center it horizontally */
   display: flex;            /* Enable side-by-side layout */
   gap: 10px;                /* Optional spacing between columns */
-
 }
 
 .problem_container > div {
   flex: 1;                  /* Each child div takes up equal width */
-  width:30%;
   background: #f2f2f2;      /* Optional styling */
   padding: 20px;
   box-sizing: border-box;
-  background: #012089;
+  background: #012189ab;
+  font-family: K2D, sans-serif;
   color:white;
+}
+
+pre {
+  font-family: K2D, sans-serif;
+}
+
+textarea {
+  flex: 1;      /* Optional styling */
+  padding: 20px;
+  height:400px;
+  box-sizing: border-box;
+  background: #C2ECFF;
+  font-family: K2D, sans-serif;
+  color:black;
 }
