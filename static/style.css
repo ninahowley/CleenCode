@@ -272,39 +272,55 @@ nav a:focus {
   margin: 20px 0;
 }
 
+/* Highlight layer */
 #highlight-layer {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+  pointer-events: none;
+
   margin: 0;
   padding: 10px;
-  pointer-events: none;
-  color: #d4d4d4;
-  z-index: 1;
-  white-space: pre-wrap;
-  box-sizing: border-box;
   width: 100%;
-  word-wrap: break-word;
-  overflow: auto;
-  line-height: 1.5;
   min-height: 200px;
+
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  overflow: hidden; /* FIX 1 */
+  color: #d4d4d4;
+
+  font-family: Consolas, monospace; /* FIX 2 */
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+/* Textarea */
 #code {
   position: relative;
   z-index: 2;
+
   background: transparent;
   color: transparent;
+
   caret-color: white;
   border: none;
   outline: none;
+
   width: 100%;
   min-height: 200px;
+  box-sizing: border-box;
   padding: 10px;
   resize: none;
-  line-height: 1.5;
+
+  white-space: pre-wrap;
+  overflow: auto;
+
+  font-family: Consolas, monospace; /* FIX 2 */
   font-size: 14px;
-  box-sizing: border-box;
+  line-height: 1.5;
 }
 
 .keyword { color: #53A4F5; font-weight: bold; }
