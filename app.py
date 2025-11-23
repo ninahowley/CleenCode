@@ -59,11 +59,10 @@ def problem(problem_slug):
 
             print(session['complete'])
 
-
+            data['incorrect_code'] = code
             # print(test_results)
             return render_template('problem.html', data=data, tests=test_results, page_title=problem_name)
 
-        
         except Exception as e:
             return f"Error: {str(e)}", 500, {'Content-Type': 'text/plain'}
 
