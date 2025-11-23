@@ -28,29 +28,9 @@ def execute_code(code):
     
     return result, output
 
-def get_function(input):
-    f = io.StringIO()
-    namespace = {}
-    with contextlib.redirect_stdout(f):
-                exec(input, namespace)  # define functions, variables, etc.
-    result = None
-
-    # Find all functions in the namespace
-    functions = [obj for obj in namespace.values() if callable(obj)]
-
-    if functions:
-        # Call the last function defined
-        result = functions[-1]()
-    return result
-
-def execute_function(code):
-    f = io.StringIO()
-    output = f.getvalue().strip()
-    return output
 
 def test_case(code, expected):
-    expected = str(expected)
-    return execute_function(code) == expected
+    return str(execute_code(code)[0]) == str(expected)
 
 problems = {
             "Two Sum": {"level":1,
@@ -72,12 +52,6 @@ You may assume that every input has exactly one pair of indices
 i and j that satisfy the condition.
 
 Return the answer with the smaller index first.
-
-Constraints:
-
-2 <= nums.length <= 1000
--10,000,000 <= nums[i] <= 10,000,000
--10,000,000 <= target <= 10,000,000
 """,
             "examples":
 """
@@ -136,11 +110,6 @@ A palindrome is a string that reads the same forward and backward.
 It is also case-insensitive and ignores all non-alphanumeric characters.
 
 Note: Alphanumeric characters consist of letters (A-Z, a-z) and numbers (0-9).
-
-Constraints:
-
-1 <= s.length <= 1000
-s is made up of only printable ASCII characters.
 """,
             "examples":
 """
@@ -244,13 +213,6 @@ def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
 You are given the beginning of a linked list head, and an integer n.
 
 Remove the nth node from the end of the list and return the beginning of the list.
-
-Constraints:
-
-The number of nodes in the list is sz.
-1 <= sz <= 30
-0 <= Node.val <= 100
-1 <= n <= sz
 """,
             "examples":
             """
