@@ -64,7 +64,8 @@ def (nums: List[int], target: int) -> List[int]:
             if nums[i] + nums[j] == target:
                 return [i, j]""",
                         "description":   
-"""Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j.
+"""
+Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j.
 
 You may assume that every input has exactly one pair of indices i and j that satisfy the condition.
 
@@ -106,7 +107,8 @@ def isPalindrome(s: str) -> bool:
     filtered = ''.join(c for c in s if c.isalpha())
     return filtered == filtered[::-1]""",
                            "description":
-"""Given a string s, return true if it is a palindrome, otherwise return false.
+"""
+Given a string s, return true if it is a palindrome, otherwise return false.
 
 A palindrome is a string that reads the same forward and backward. It is also case-insensitive and ignores all non-alphanumeric characters.
 
