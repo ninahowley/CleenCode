@@ -238,10 +238,6 @@ nav a:focus {
   text-align: right;
 }
 
-.grid-container {
-      display: grid;
-      grid-template-columns: 2fr 1fr; /* two columns: 2 parts input, 1 part button */
-    }
 
 .btn-resultp {
   font-size: 18px;

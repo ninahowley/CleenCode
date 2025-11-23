@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         tests.forEach(test => {
             const li = document.createElement('li');
-            li.style.cssText = 'display: grid; border-radius: 8px; padding: 12px; margin: 8px 0; background-color: #53A4F5;';
+            li.style.cssText = 'border-radius: 8px; padding: 12px; margin: 8px 0; background-color: #53A4F5;';
             
             let html = '';
             for (const [input_name, input_value] of Object.entries(test.input)) {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             html += `<p style="color:white; font-family: Consolata, sans-serif;"><strong>result =</strong> ${test.actual}</p>`;
             
             if (test.passed) {
-                html += '<div class="user-test-case"><h4 class="btn-container btn-resultp ">PASSED</h4></div>';
+                html += '<div class="user-test-case"><h4 class="btn-container btn-resultp">PASSED</h4></div>';
             } else {
                 html += '<div class="user-test-case"><h4 class="btn-container btn-resultf">FAILED</h4></div>';
             }

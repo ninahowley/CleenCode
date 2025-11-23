@@ -58,7 +58,7 @@
           {% else %}
             <!-- User-submitted Test Cases -->
             <div class="user-test-case">
-            <li style="display: grid; border-radius: 8px; padding: 12px; margin: 8px 0; background-color: #53A4F5;">
+            <li style="border-radius: 8px; padding: 12px; margin: 8px 0; background-color: #53A4F5;">
               {% for input_name, input_value in test['input'].items() %}
                 <p style="color:white; font-family: Consolata, sans-serif;"><strong>{{ input_name }} =</strong> {{ input_value }}</p>
               {% endfor %}
