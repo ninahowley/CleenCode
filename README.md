@@ -8,7 +8,7 @@ CleenCode is a website for CS students to practice for technical interviews by c
 * Jessica Chen '28
 * Cindy Li '28
 
-<h3><a href="https://cleencode.fishing/" target="_blank">Deployed Site</a></h3>
+<h3><a href="https://cleencode.fishing/" target="_blank">Webite</a></h3>
 <h3><a href="https://devpost.com/software/cleencode?ref_content=user-portfolio&ref_feature=in_progress" target="_blank">Devpost</a></h3>
 <h3><a href="https://docs.google.com/presentation/d/1Pj-qZoz-9NRz9xjVkWMByr6ymnSsAppOhB1rLHORHPM/present?slide=id.p" target="_blank">Slideshow</a></h3>
 
