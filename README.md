@@ -1,6 +1,8 @@
 # CleenCode
 
-CleenCode is a website for CS students to practice for technical interviews by correcting faulty code. It was submitted for WHACK 2025.
+CleenCode is a website for CS students to practice for technical interviews by correcting faulty code. 
+
+It was submitted for WHACK 2025.
 
 ## Authors
 * Nina Howley '27
